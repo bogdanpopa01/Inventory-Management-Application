@@ -1,5 +1,5 @@
 class Item {
-  static id = 110;
+  static id = 90;
   name = "";
   pricePerItem = "";
   quantity = "";
@@ -27,7 +27,9 @@ class Item {
   }
 }
 
-let items = [];
+let item1 = new Item("Mouse", 140, 1);
+let item2 = new Item("Phone", 460, 2);
+let items = [item1, item2];
 
 function createItem() {
   let name = document.getElementById("name").value;
@@ -69,9 +71,9 @@ function readItems() {
       `<tr id="item_${currentItem.id}"> 
     <td>${currentItem.id}</td>
     <td>${currentItem.name}</td>
-    <td>${currentItem.pricePerItem}</td>
+    <td>$  ${currentItem.pricePerItem}</td>
     <td>${currentItem.quantity}</td>
-    <td>${currentItem.totalPrice}</td>
+    <td>$ ${currentItem.totalPrice}</td>
     </tr>`
     );
   }
