@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="style.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <title>Inventory Management Application</title>
+  </head>
+  <body>
+    <h1 class="title">Inventory Management Application</h1>
+    <table>
+      <caption>
+        Your items
+      </caption>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Price per item</th>
+          <th>Quantity</th>
+          <th>Total price</th>
+        </tr>
+      </thead>
+      <tbody id="items">
+        <tr>
+          <th>100</th>
+          <th>Mouse</th>
+          <th>$ 140</th>
+          <th>1</th>
+          <th>$ 140</th>
+        </tr>
+        <tr>
+          <th>110</th>
+          <th>Phones</th>
+          <th>$ 460</th>
+          <th>2</th>
+          <th>$ 920</th>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td id="items_number">Items selected: 2</td>
+        </tr>
+      </tfoot>
+    </table>
+    <form action="#">
+      <label for="name">Name:</label>
+      <input name="name" id="name" />
+
+      <label for="pricePerItem">Price per item:</label>
+      <input name="pricePerItem" id="pricePerItem" />
+
+      <label for="quantity">Quantity:</label>
+      <input name="quantity" id="quantity" />
+
+      <input type="submit" id="btnAdd" name="btnAdd" value="Add" id="btnAdd" />
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
