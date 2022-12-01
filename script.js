@@ -25,6 +25,10 @@ class Item {
   setQuantity(quantity) {
     this.quantity = quantity;
   }
+
+  setTotalPrice() {
+    this.totalPrice = this.quantity * this.pricePerItem;
+  }
 }
 
 let item1 = new Item("Mouse", 140, 1);
@@ -74,6 +78,8 @@ function readItems() {
     <td>$  ${currentItem.pricePerItem}</td>
     <td>${currentItem.quantity}</td>
     <td>$ ${currentItem.totalPrice}</td>
+    <td><input type="button" value="Delete" onclick="deleteItem(${currentItem.id})"> </td>
+    <td><input type="button" value="Modify" onclick="modifyItem(${currentItem.id})"> </td>
     </tr>`
     );
   }
@@ -89,3 +95,28 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   readItems();
 });
+
+function deleteItem(id) {
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].id === id) {
+      items.splice(i, 1);
+    }
+  }
+  readItems();
+}
+
+function modifyItem(id) {
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].id === id) {
+      let name = prompt("Name: ", items[i].name);
+      let pricePerItem = prompt("Price per item: ", items[i].pricePerItem);
+      let quantity = prompt("Quantity: ", items[i].quantity);
+
+      items[i].setName(name);
+      items[i].setPricePerItem(pricePerItem);
+      items[i].setQuantity(quantity);
+      items[i].setTotalPrice();
+    }
+  }
+  readItems();
+}
